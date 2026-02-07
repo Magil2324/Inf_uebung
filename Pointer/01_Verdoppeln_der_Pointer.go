@@ -4,5 +4,5 @@ package pointer
 // Schreibe eine Funktion, die den Wert, auf den p zeigt, verdoppelt.
 // Wenn p == nil, soll nichts passieren (keine Panic).
 func DoubleViaPointer(p *int) {
-	// TODO: implement
+	//TODO
 }
