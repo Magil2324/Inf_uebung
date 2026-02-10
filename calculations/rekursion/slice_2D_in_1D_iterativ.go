@@ -1,5 +1,7 @@
 package rekursion
 
+import "slices"
+
 // Erwartet eine verschachtelte Liste von Ganzzahlen (int).
 // Jede innere Liste kann beliebig viele Zahlen enthalten.
 // Die Funktion soll alle Zahlen zu einem einzigen Slice zusammenführen („flatten“).
@@ -14,6 +16,20 @@ package rekursion
 //
 // Die Funktion soll iterativ geschrieben werden
 func FlattenIterativ(nested [][]int) []int {
-	// TODO: Funktion implementieren (rekursiv oder iterativ)
-	return nil // Platzhalterwert
+
+	var list []int
+
+	if len(nested) == 0 {
+		return list
+	}
+
+	for _, innerlist := range nested {
+		for _, i := range innerlist {
+			if !slices.Contains(list, i) {
+				list = append(list, i)
+			}
+		}
+	}
+
+	return list
 }

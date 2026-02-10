@@ -19,6 +19,16 @@ import "unicode"
 // (Achtung: auch große A zählen!)
 func CountLetterNested(nested [][]string, letter rune) int {
 	// TODO: Funktion implementieren (rekursiv oder iterativ möglich)
-	num := unicode.ToLower('0')
-	return int(num) // Platzhalterwert
+	num := 0
+
+	for _, innerList := range nested {
+		for _, str := range innerList {
+			for _, char := range str {
+				if unicode.ToLower(char) == unicode.ToLower(letter) {
+					num++
+				}
+			}
+		}
+	}
+	return num // Platzhalterwert
 }
